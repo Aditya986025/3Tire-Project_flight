@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Code-pull'){
             steps{
-                git branch: 'main', url: 'https://github.com/mayurmwagh/flight-reservation-app.git'
+                git branch: 'master', url: 'https://github.com/mayurmwagh/flight-reservation-app.git'
             }
         }
         stage('Build'){
@@ -28,9 +28,9 @@ pipeline{
             steps{
                 sh'''
                     cd FlightReservationApplication
-                    docker build -t mayurwagh/flight-reservation-15-16:latest . 
-                    docker push mayurwagh/flight-reservation-15-16:latest
-                    docker rmi mayurwagh/flight-reservation-15-16:latest
+                    docker build -t aditya986025/flight-reservation-15-16:latest . 
+                    docker push  aditya986025/flight-reservation-15-16:latest
+                    docker rmi aditya986025/flight-reservation-15-16:latest
                 '''
             }
         }
