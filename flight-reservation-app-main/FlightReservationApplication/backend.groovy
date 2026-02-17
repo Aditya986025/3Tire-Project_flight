@@ -42,12 +42,14 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh '''
-                    cd flight-reservation-app-main/FlightReservationApplication
-                    kubectl apply -f k8s/
-                '''
-            }
-        }
+    steps {
+        sh '''
+            cd flight-reservation-app-main/FlightReservationApplication
+            kubectl apply -f k8s/ns.yaml
+            kubectl apply -f k8s/
+        '''
+          }
+       }
+
     }
 }
